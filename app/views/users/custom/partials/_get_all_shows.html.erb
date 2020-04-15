@@ -1,0 +1,16 @@
+<table class="table">
+  	<thead>
+  		<tr>
+  			<th>Show Name</th>
+  			<th>Favourite</th>
+  			</tr>
+  	</thead>
+  	<tbody>
+  		<% @all_shows.each do |sh| %>
+  		<tr>
+  			<td><%=sh.name%></td>
+  			<td><input type="checkbox" show_id="<%=sh.id%>" <%if current_user.fav_shows.include? sh %> checked="checked" <%else %><%end%> class="mark_fav" value=""></label></td>
+  		</tr>
+  		<% end %>
+  	</tbody>
+  </table>
